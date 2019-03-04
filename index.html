@@ -5,29 +5,76 @@
     <link rel="stylesheet" type="text/css" href="template/css/index.css">
 
     <title>AREA | Authentification</title>
+    <script>
+      function submit_signIn() {
+        fetch("http://93.118.34.39:8081/authentification.json?mail=xwilarg@yahoo.fr&username=Zirk&password=password", {
+          method: 'POST'
+        }).then(e => console.log(e)).catch(e => console.error(e));
+      return false;
+      }
+      function submit_signUp() {
+        fetch("http://93.118.34.39:8081/authentification.json?mail=xwilarg@yahoo.fr&username=Zirk&password=password", {
+          method: 'POST'
+        }).then(e => console.log(e)).catch(e => console.error(e));
+      return false;
+      }
+    </script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300">
   </head>
   <body>
-    <div class="form-structor">
-    	<div class="signup">
-    		<h2 class="form-title" id="signup"><span>or</span>Sign up</h2>
-    		<div class="form-holder">
-    			<input type="text" class="input" placeholder="Name" />
-    			<input type="email" class="input" placeholder="Email" />
-    			<input type="password" class="input" placeholder="Password" />
-    		</div>
-    		<button class="submit-btn">Sign up</button>
-    	</div>
-    	<div class="login slide-up">
-    		<div class="center">
-    			<h2 class="form-title" id="login"><span>or</span>Log in</h2>
-    			<div class="form-holder">
-    				<input type="email" class="input" placeholder="Email" />
-    				<input type="password" class="input" placeholder="Password" />
-    			</div>
-    			<button class="submit-btn">Log in</button>
-    		</div>
-    	</div>
+    <div class="cotn_principal">
+      <div class="cont_centrar">
+        <div class="cont_login">
+          <div class="cont_info_log_sign_up">
+            <div class="col_md_login">
+              <div class="cont_ba_opcitiy">
+                <h2>LOGIN</h2>
+                <p> Welcome back dear user </p>
+                <button class="btn_login" onclick="cambiar_login()">LOGIN</button>
+              </div>
+            </div>
+            <div class="col_md_sign_up">
+              <div class="cont_ba_opcitiy">
+                <h2>SIGN UP</h2>
+                <p>Are you new here ? !</p>
+                <button class="btn_sign_up" onclick="cambiar_sign_up()">SIGN UP</button>
+              </div>
+            </div>
+          </div>
+          <div class="cont_back_info">
+             <div class="cont_img_back_grey">
+               <img src="https://images.unsplash.com/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=7686972873678f32efaf2cd79671673d" alt="" />
+             </div>
+          </div>
+          <div class="cont_forms" >
+            <div class="cont_img_back_">
+               <img src="https://images.unsplash.com/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=7686972873678f32efaf2cd79671673d" alt="" />
+            </div>
+            <div class="cont_form_login">
+              <form action="#" method="post">
+                <a href="#" onclick="ocultar_login_sign_up()" ><i class="material-icons">&#xE5C4;</i></a>
+                <h2>LOGIN</h2>
+                <input type="text" name="email_in" placeholder="Email" required=""/>
+                <input type="password" name="pwd_in" placeholder="Password" required=""/>
+                <button class="btn_login" onclick="cambiar_login();submit_signIn()">LOGIN</button>
+              </form>
+            </div>
+            <div class="cont_form_sign_up">
+              <form action="#" method="post">
+                <a href="#" onclick="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
+                <h2>SIGN UP</h2>
+                <input type="text" name="email_up" placeholder="Email" required=""/>
+                <input type="text" name="user_up" placeholder="User" required=""/>
+                <input type="password" name="pwd_up" placeholder="Password" required=""/>
+                <input type="password" name="pwdRe_up" placeholder="Confirm Password" required=""/>
+                <button class="btn_sign_up" onclick="cambiar_sign_up();submit_signUp()">SIGN UP</button>
+              </form>
+            </div>
+          </div>
+        </div>
+       </div>
     </div>
-    <script src="template/js/auth.js" charset="utf-8"></script>
+    <script src="template/js/signUP.js" charset="utf-8"></script>
   </body>
 </html>
