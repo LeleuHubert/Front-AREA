@@ -8,10 +8,13 @@
       function SendToBack() {
         var step1="http://93.118.34.39:8081/authentification.json?mail="+ document.getElementById('mail').value;
         var step2= step1 + "&password=" + document.getElementById('pwd').value + "&username=" + document.getElementById('user').value;
-        fetch(step2,{method:"post"}).then(() => {
-         location.href= "../index.html"
-      });
-      }
+        fetch(step2,{method:"post"}).then(function(response){
+          if(response.status != 200){
+              alert("help something got wrong")
+              return
+          }
+          location.href = "../index.html"
+      })}
     </script>
   </head>
   <body>

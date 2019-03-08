@@ -336,6 +336,9 @@ form a:hover {
   flex: 0 0 20rem;
   list-style: none;
   margin-left: 200px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 240px;
 }
 .list__item {
   position: relative;
